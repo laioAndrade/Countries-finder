@@ -1,12 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Teste</h1>
-    </div>
-  );
+import Toolbar from './Toolbar/Toolbar';
+
+import axios from './axios';
+import CardArea from './CardArea/CardArea';
+
+class App extends Component {
+  state = {
+    countries: []
+  }
+
+  componentDidMount() {
+    axios.get('/all')
+      .then(response => {
+        const countries = response.data;
+        this.setState({countries: countries});
+        console.log(response);
+      });
+  } 
+
+  render() {
+
+    return (
+      <div >
+          <Toolbar />
+          <CardArea countries={this.state.countries}/>
+      </div>
+    );
+  }
 }
 
 export default App;
