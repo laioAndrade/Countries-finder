@@ -9,6 +9,7 @@ class CardArea extends Component {
     render() {
         const countries = this.props.countries.map(country => {
             return <Card 
+              key={country.name}
               name={country.name} 
               population={country.population} 
               region={country.region}
