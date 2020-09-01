@@ -1,0 +1,34 @@
+.SearchTools {
+    padding:0 5%;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5%;
+    
+}
+
+.SearchTools input {
+    background: hsl(209, 23%, 22%);
+    width: 33%;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: hsl(0, 0%, 100%);
+
+    
+}
+
+.SearchTools input::placeholder {
+    color: hsl(0, 0%, 100%);
+}
+
+.SearchTools select {
+    background: hsl(209, 23%, 22%)  ;
+    width: 15%;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: hsl(0, 0%, 100%);
+}
