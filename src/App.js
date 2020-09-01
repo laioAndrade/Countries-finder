@@ -9,7 +9,7 @@ import SearchTools from './SearchTools/SearchTools';
 
 class App extends Component {
   state = {
-    countries: []
+    countries: [],
   }
 
   componentDidMount() {
@@ -20,7 +20,7 @@ class App extends Component {
       });
   } 
 
-  textHandler = (event) => {
+  inputTextHandler = (event) => {
     if(event.target.value){
       axios.get('/name/' + event.target.value)
       .then(response => {
@@ -28,7 +28,7 @@ class App extends Component {
         this.setState({countries: updateCountries})
       })
       .catch(error => {
-        console.log('deu ruim');
+        this.setState({countries: []})
       });
     } else {
         axios.get('/all')
@@ -36,16 +36,32 @@ class App extends Component {
           const updateCountries = response.data;
           this.setState({countries: updateCountries});
         });
+    }  
+  }
+
+  selectHandler = (event) => {
+    if(event.target.value === ""){
+      axios.get('/all')
+        .then(response => {
+          const updateCountries = response.data;
+          this.setState({countries: updateCountries});
+        });
+    }else {
+      axios.get('/region/' + event.target.value)
+      .then(response => {
+        const updateCountries = response.data;
+        this.setState({countries: updateCountries});
+      });
     }
     
-}
+  }
 
   render() {
 
     return (
       <div >
           <Toolbar />
-          <SearchTools changed={this.textHandler}/>
+          <SearchTools inputChanged={this.inputTextHandler} selectChanged={this.selectHandler}/>
           <CardArea countries={this.state.countries}/>
       </div>
     );

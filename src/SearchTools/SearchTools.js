@@ -8,14 +8,14 @@ class SearchTools extends Component {
 
         return(
             <div className={classes.SearchTools}> 
-                <input  type="text" placeholder="   Search for a country..." onChange={this.props.changed}/>
-                <select>
-                    <option defaultValue>Filter by Region</option>
-                    <option>Africa</option>
-                    <option>America</option>
-                    <option>Asia</option>
-                    <option>Europe</option>
-                    <option>Oceania</option>
+                <input  type="text" placeholder="   Search for a country..." onChange={this.props.inputChanged}/>
+                <select onChange={this.props.selectChanged}>
+                    <option defaultValue value="">Filter by Region</option>
+                    <option value="africa">Africa</option>
+                    <option value="americas">America</option>
+                    <option value="asia">Asia</option>
+                    <option value="europe">Europe</option>
+                    <option value="oceania">Oceania</option>
                 </select>
             </div>
         );
