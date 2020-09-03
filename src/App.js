@@ -19,12 +19,17 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('/all')
-      .then(response => {
-        const updateCountries = response.data;
-        this.setState({countries: updateCountries});
-      });
+    this.getAll();
   } 
+
+
+  getAll () {
+    axios.get('/all')
+    .then(response => {
+      const updateCountries = response.data;
+      this.setState({countries: updateCountries});
+    });
+  }
 
   inputTextHandler = (event) => {
     if(event.target.value){
@@ -37,21 +42,13 @@ class App extends Component {
         this.setState({countries: []})
       });
     } else {
-        axios.get('/all')
-        .then(response => {
-          const updateCountries = response.data;
-          this.setState({countries: updateCountries});
-        });
+        this.getAll();
     }  
   }
 
   selectHandler = (event) => {
     if(event.target.value === ""){
-      axios.get('/all')
-        .then(response => {
-          const updateCountries = response.data;
-          this.setState({countries: updateCountries});
-        });
+      this.getAll();
     }else {
       axios.get('/region/' + event.target.value)
       .then(response => {
