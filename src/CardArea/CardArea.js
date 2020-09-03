@@ -5,7 +5,6 @@ import Card from './Card/Card';
 
 class CardArea extends Component {
 
-
     render() {
         const countries = this.props.countries.map(country => {
             return <Card 
@@ -14,7 +13,8 @@ class CardArea extends Component {
               population={country.population} 
               region={country.region}
               capital={country.capital}
-              flag={country.flag}/>
+              flag={country.flag}
+              />
         })
         return(
             <div className={classes.CardArea}>
