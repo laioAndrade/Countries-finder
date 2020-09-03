@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import classes from './SearchTools.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 class SearchTools extends Component {
 
@@ -8,7 +10,10 @@ class SearchTools extends Component {
 
         return(
             <div className={classes.SearchTools}> 
-                <input  type="text" placeholder="   Search for a country..." onChange={this.props.inputChanged}/>
+                <input  
+                    type="text" 
+                    placeholder="   Search for a country..."
+                    onChange={this.props.inputChanged}/>
                 <select onChange={this.props.selectChanged}>
                     <option defaultValue value="">Filter by Region</option>
                     <option value="africa">Africa</option>

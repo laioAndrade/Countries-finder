@@ -7,6 +7,12 @@ import axios from './axios';
 import CardArea from './CardArea/CardArea';
 import SearchTools from './SearchTools/SearchTools';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { faMoon, faSearch} from '@fortawesome/free-solid-svg-icons';
+
+library.add(fab, faMoon, faSearch);
+
 class App extends Component {
   state = {
     countries: [],
