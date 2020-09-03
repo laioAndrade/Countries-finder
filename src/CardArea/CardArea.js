@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import classes from './CardArea.module.css';
 
 import axios from '../axios';
+import { Route, Link } from 'react-router-dom';
 
 import Card from './Card/Card';
 import SearchTools from '../SearchTools/SearchTools';
+import Country from '../Country/Country';
 
 class CardArea extends Component {
     state = {
-        countries: [],
+        countries: []
       }
     
       getAll () {
@@ -51,24 +53,33 @@ class CardArea extends Component {
         
       }
     
+    clickedHandler = (country) => {
+        this.setState({countries: country, clicked: true});
+    }
 
     render() {
         const countries = this.state.countries.map(country => {
-            return <Card 
-              key={country.name}
-              name={country.name} 
-              population={country.population} 
-              region={country.region}
-              capital={country.capital}
-              flag={country.flag}
-              />
-        })
+                return (
+                    <Link to={{pathname: "/" + country.name, state: country}}>
+                        <Card 
+                            key={country.name}
+                            name={country.name} 
+                            population={country.population} 
+                            region={country.region}
+                            capital={country.capital}
+                            flag={country.flag}
+                            />
+                    </Link>
+                    );
+            })
+        
         return(
             <>
-            <SearchTools inputChanged={this.inputTextHandler} selectChanged={this.selectHandler}/>
-            <div className={classes.CardArea}>
-                {countries}
-            </div>
+                <SearchTools inputChanged={this.inputTextHandler} selectChanged={this.selectHandler}/>
+                <div className={classes.CardArea}>
+                    {countries}
+                </div>
+                <Route path="/:name" component={Country}/>
             </>
         );
     }
