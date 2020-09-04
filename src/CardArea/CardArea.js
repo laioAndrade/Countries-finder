@@ -61,9 +61,9 @@ class CardArea extends Component {
         const countries = this.state.countries.map(country => {
                 return (
                     <NavLink to={{pathname: "/" + country.name, state: country}}
-                            style={{ textDecoration: 'none' }}>
-                        <Card 
-                            key={country.name}
+                            style={{ textDecoration: 'none' }}
+                            key={country.name}>
+                        <Card   
                             name={country.name} 
                             population={country.population} 
                             region={country.region}
