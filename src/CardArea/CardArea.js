@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classes from './CardArea.module.css';
 
 import axios from '../axios';
-import { Route, Link } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 
 import Card from './Card/Card';
 import SearchTools from '../SearchTools/SearchTools';
@@ -60,7 +60,8 @@ class CardArea extends Component {
     render() {
         const countries = this.state.countries.map(country => {
                 return (
-                    <Link to={{pathname: "/" + country.name, state: country}}>
+                    <NavLink to={{pathname: "/" + country.name, state: country}}
+                            style={{ textDecoration: 'none' }}>
                         <Card 
                             key={country.name}
                             name={country.name} 
@@ -69,7 +70,7 @@ class CardArea extends Component {
                             capital={country.capital}
                             flag={country.flag}
                             />
-                    </Link>
+                    </NavLink>
                     );
             })
         
