@@ -36,11 +36,12 @@
 
 .Flag {
     width: 100%;
-    height: 50%;
+    height: 350px;
 }
 
 .Img {
     width: 100%;
+    height: 100%;
 }
 
 

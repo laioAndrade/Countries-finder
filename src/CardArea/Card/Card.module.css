@@ -1,6 +1,6 @@
 .Card {
     background-color: hsl(209, 23%, 22%);
-    height: 350px;
+    height: 400px;
     display: flex;
     align-items: left;
     justify-content: space-between;

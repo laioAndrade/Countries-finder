@@ -9,13 +9,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class Country extends Component {
     state = {
         country: [],
-        error: false
+        error: false,
+        languages: [],
+        currencies: []
     }
 
     componentDidMount() {      
             axios.get('https://restcountries.eu/rest/v2/name/' + this.props.match.params.name + '?fullText=true')
             .then(response => {
-                this.setState({country: response.data[0]});
+                const upLanguages = response.data[0].languages.map(lang => lang.name);
+                this.setState({country: response.data[0], languages: upLanguages.join(', ') });
             })
             .catch(error => {
                 this.setState({error: true});
@@ -23,8 +26,8 @@ class Country extends Component {
     }
 
     render () {
-        
         return (
+            
             !this.state.error ?  
             <>
             <div className={classes.Back}>
@@ -49,7 +52,8 @@ class Country extends Component {
                         </div>
                         <div className={classes.InfoRight}>
                             <span><strong>Top Level Domain:</strong> {this.state.country.topLevelDomain} </span>
-                            <span><strong>Languages:</strong> </span>
+                            <span><strong>Currencies: </strong></span>
+                            <span><strong>Languages: </strong>{this.state.languages} </span>
                         </div>
                     </div>
                 </div>
