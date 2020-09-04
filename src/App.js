@@ -6,6 +6,7 @@ import CardArea from './CardArea/CardArea';
 import SearchTools from './SearchTools/SearchTools';
 
 import axios from './axios';
+import Country from './Country/Country';
 
 import { Route } from 'react-router-dom';
 
@@ -22,7 +23,8 @@ class App extends Component {
     return (
       <div >
           <Toolbar />
-          <Route path="/" component={CardArea}/>
+          <Route path="/" exact component={CardArea}/>
+          <Route path="/:name" component={Country} />
       </div>
     );
   }
