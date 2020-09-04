@@ -5,6 +5,35 @@
     
 }
 
+.Back {
+    width: 80px;
+    height: 25px;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    background-color: hsl(209, 23%, 22%);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding-left: 20px;    
+    box-shadow: 0 0 4px 1px rgba(0,0,0,.2);
+    border-radius: 2px;
+    
+}
+
+.Back button {
+    padding: 0;
+    padding-left: 10px;
+    background-color: hsl(209, 23%, 22%);
+    width: 80%;
+    text-align: left;
+    border: none;
+    color: hsl(0, 0%, 100%);
+    outline: none;
+    cursor: pointer;
+}
+
+
+
 .Flag {
     width: 100%;
     height: 50%;
