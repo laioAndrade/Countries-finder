@@ -68,3 +68,14 @@
     display: flex;
     flex-direction: column;
 }
+
+
+@media (max-width: 500px) {
+    .Country {
+        flex-direction: column;
+    }
+
+    .Flag {
+        height: 250px;
+    }
+}

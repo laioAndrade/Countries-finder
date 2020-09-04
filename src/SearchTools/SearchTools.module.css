@@ -32,3 +32,23 @@
     border-radius: 5px;
     color: hsl(0, 0%, 100%);
 }
+
+
+@media (max-width: 500px) {
+    .SearchTools {
+        flex-direction: column;
+    }
+
+    .SearchTools input {
+        width: 100%;
+        margin-bottom: 5%;
+        align-self: flex-start;
+        text-align: center;
+    }
+
+    .SearchTools select {
+        align-self: flex-start;
+        width: 50%;
+        padding-left: 10px;
+    }
+}
