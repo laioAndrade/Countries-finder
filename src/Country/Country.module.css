@@ -6,10 +6,13 @@
 }
 
 .Flag {
-    width: auto;
+    width: 100%;
     height: 50%;
 }
 
+.Img {
+    width: 100%;
+}
 
 
 .Info {
