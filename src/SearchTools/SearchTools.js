@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import classes from './SearchTools.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 class SearchTools extends Component {

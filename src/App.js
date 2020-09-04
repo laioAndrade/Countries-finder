@@ -3,8 +3,6 @@ import './App.css';
 
 import Toolbar from './Toolbar/Toolbar';
 import CardArea from './CardArea/CardArea';
-import SearchTools from './SearchTools/SearchTools';
-
 import Country from './Country/Country';
 
 import { Route, Switch } from 'react-router-dom';

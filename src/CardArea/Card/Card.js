@@ -5,7 +5,7 @@ class Card extends Component {
     render(){
         return(
             <div className={classes.Card} >  
-                <img className={classes.Flag} src={this.props.flag}/>
+                <img className={classes.Flag} src={this.props.flag} alt="flag"/>
                 <div className={classes.Info}>
                     <p><strong>{this.props.name}</strong></p>
                     <span><strong>Population:</strong> {this.props.population}</span>
