@@ -64,7 +64,7 @@ class Country extends Component {
                 </div>
             </div>
             </>
-            : <Redirect from={this.props.match.url} to={CardArea}/> 
+            : <Redirect from={this.props.match.url} to={"https://countriesfinder.netlify.app/"}/> 
         );
     }
 
