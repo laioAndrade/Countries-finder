@@ -13,7 +13,7 @@ class Country extends Component {
         currencies: []
     }
 
-    componentWillMount() {      
+    componentDidMount() {      
             axios.get('https://restcountries.eu/rest/v2/name/' + this.props.match.params.name + '?fullText=true')
             .then(response => {
                 const upLanguages = response.data[0].languages.map(lang => lang.name);
