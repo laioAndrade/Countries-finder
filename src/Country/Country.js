@@ -13,7 +13,7 @@ class Country extends Component {
         currencies: []
     }
 
-    componentDidMount() {      
+    componentWillMount() {      
             axios.get('https://restcountries.eu/rest/v2/name/' + this.props.match.params.name + '?fullText=true')
             .then(response => {
                 const upLanguages = response.data[0].languages.map(lang => lang.name);
@@ -66,8 +66,6 @@ class Country extends Component {
             : <Redirect from={this.props.match.url} to={"https://countriesfinder.netlify.app/"}/> 
         );
     }
-
-    
 }
 
 export default Country;
