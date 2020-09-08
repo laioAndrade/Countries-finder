@@ -73,6 +73,7 @@
 @media (max-width: 500px) {
     .Country {
         flex-direction: column;
+        overflow: hidden;
     }
 
     .Flag {
