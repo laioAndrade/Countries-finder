@@ -18,7 +18,12 @@ class Country extends Component {
             axios.get('https://restcountries.eu/rest/v2/name/' + this.props.match.params.name + '?fullText=true')
             .then(response => {
                 const upLanguages = response.data[0].languages.map(lang => lang.name);
-                this.setState({country: response.data[0], languages: upLanguages.join(', ') });
+                const upCurrencies = response.data[0].currencies.map(curr => curr.name);
+                this.setState({
+                    country: response.data[0], 
+                    languages: upLanguages.join(', '),
+                    currencies: upCurrencies.join(', ') 
+                });
             })
             .catch(error => {
                 this.setState({error: true});
@@ -52,7 +57,7 @@ class Country extends Component {
                         </div>
                         <div className={classes.InfoRight}>
                             <span><strong>Top Level Domain:</strong> {this.state.country.topLevelDomain} </span>
-                            <span><strong>Currencies: </strong></span>
+                            <span><strong>Currencies: </strong>{this.state.currencies}</span>
                             <span><strong>Languages: </strong>{this.state.languages} </span>
                         </div>
                     </div>
@@ -60,7 +65,6 @@ class Country extends Component {
             </div>
             </>
             : <Redirect from={this.props.match.url} to={CardArea}/> 
-            
         );
     }
 

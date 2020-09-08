@@ -78,4 +78,17 @@
     .Flag {
         height: 250px;
     }
+
+    .Info {
+        flex-direction: column;
+    }
+
+    .InfoSides {
+        flex-direction: column;        
+    }   
+
+    .InfoLeft, 
+    .InfoRight {
+        margin-bottom: 5%;
+    }
 }
