@@ -3,7 +3,6 @@ import classes from './Country.module.css';
 
 import axios from 'axios';
 import { Redirect, NavLink } from 'react-router-dom';
-import CardArea from '../CardArea/CardArea';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Country extends Component {
